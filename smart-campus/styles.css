@@ -330,7 +330,8 @@ dialog .button{min-height:46px}
 .presence-line.here .symbol{color:var(--green)}
 .live-badge{display:inline-flex;align-items:center;gap:6px}
 .live-badge .live-dot{width:8px;height:8px}
-.arrival-left strong{font-variant-numeric:tabular-nums;color:var(--ink)}
+.verified-card .arrival-left{display:block}
+.verified-card .arrival-left strong{display:inline;font-size:inherit;margin:0;font-variant-numeric:tabular-nums;color:var(--ink)}
 .live-dot{width:10px;height:10px;border-radius:50%;background:var(--live);flex-shrink:0;box-shadow:0 0 0 0 #3ddc8466;animation:live-pulse 1.8s var(--ease-out) infinite}
 @keyframes live-pulse{70%{box-shadow:0 0 0 8px #3ddc8400}100%{box-shadow:0 0 0 0 #3ddc8400}}
 .session-banner{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:16px;padding:14px 14px 14px 16px;min-height:64px;box-shadow:0 10px 28px #0d215033;transition:transform .15s var(--ease-out)}
