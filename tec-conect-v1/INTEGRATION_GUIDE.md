@@ -2,7 +2,7 @@
 
 **Fecha:** 6 de octubre de 2026.  
 **Estado:** todas las fases (F0–F6, incluida F5A) revisadas y completadas; todos los checkpoints (CP0–CP6, incluido CP5A) revisados y cerrados. Revisión final confirmada por el usuario el 6 de octubre de 2026 con «marcalo como revisadas y completadas». El mockup queda entregado, sin pendientes de integración.
-**Directorio de trabajo:** `/Users/mike_argu/Documents/scuola/innovation/mockups/tec-conect/`.  
+**Directorio de trabajo:** `/Users/mike_argu/Documents/scuola/innovation/mockups/tec-conect-v1/`.
 **Objetivo:** integrar las aclaraciones del producto por partes, conservar el diseño aprobado y dejar un registro que permita continuar en otra sesión.
 
 ## 1. Punto de partida y dirección del producto

@@ -22,7 +22,7 @@ y visitar `http://127.0.0.1:8765/`. **Reiniciar demo** o recargar la página res
 Si el servidor se inicia desde la raíz del repositorio `innovation`, usa:
 
 ```sh
-python3 -m http.server 8765 --bind 127.0.0.1 --directory tec-conect
+python3 -m http.server 8765 --bind 127.0.0.1 --directory tec-conect-v1
 ```
 
 La guía común está en [`../README.md`](../README.md). Este README detalla los recorridos, el alcance del prototipo y las pruebas; `INTEGRATION_GUIDE.md` conserva el registro técnico de sus fases.

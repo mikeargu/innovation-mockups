@@ -1,6 +1,6 @@
 # Tec CEM Smart Campus · mockup móvil
 
-**Estado:** implementación y revisión técnica completadas, 7 de octubre de 2026. Las fases F0–F9 están implementadas (F6 reserva desde el chat, F7–F8 llegada al gimnasio con QR y temporizador); la revisión visual del usuario queda abierta para ajustes posteriores.
+**Estado:** implementación y revisión técnica completadas, 8 de octubre de 2026. Las fases F0–F10 están implementadas (F6 reserva desde el chat, F7–F8 llegada al gimnasio con QR y temporizador, F10 correcciones de la revisión); la revisión visual del usuario queda abierta para ajustes posteriores.
 
 Demo local en español para presentar cómo un estudiante descubre y utiliza espacios, recursos y servicios. **Concepto · datos ficticios**: nombres, perfil, matrícula, ubicaciones, horarios, afluencia, requisitos y acciones son ejemplos. El nombre del producto es de trabajo y está sujeto a revisión institucional. Los diagramas no representan planos oficiales del campus.
 
@@ -17,7 +17,7 @@ Después, visitar `http://127.0.0.1:8766/`. La experiencia mantiene el formato d
 Si el servidor se inicia desde la raíz del repositorio `innovation`, usa:
 
 ```sh
-python3 -m http.server 8766 --bind 127.0.0.1 --directory smart-campus
+python3 -m http.server 8766 --bind 127.0.0.1 --directory smart-campus-v1
 ```
 
 La guía común está en [`../README.md`](../README.md). Para entender los recorridos, los datos de ejemplo y la estructura del código, continúa con este README y `INTEGRATION_GUIDE.md`.
@@ -39,7 +39,9 @@ El calendario de demostración usa el 7–9 de octubre de 2026. Las estimaciones
 
 `INTEGRATION_GUIDE.md` contiene las fases, la evidencia técnica y el registro de continuidad. La revisión visual del usuario se registra por separado.
 
-**Resultado:** 63 pruebas Node, 455 comprobaciones de navegador y 108 estados de pantalla/ancho en la auditoría de accesibilidad aprobados. Se revisó foco por teclado en siete recorridos principales. La apertura directa local funciona y el recorrido integral registró cero errores de ejecución o de assets. Hay 22 capturas en `review/` para teléfono y presentación.
+**Correcciones del 8 de octubre (F10):** la búsqueda de Explorar admite acentos escritos con tecla muerta y mantiene el foco; los chips y el selector Mapa/Lista se anuncian como grupos; tu propia reserva aparece como «Tu reserva» y enlaza al registro; el formulario del gimnasio muestra cuánto falta para que caduque la llegada y vuelve solo a «escanear de nuevo»; si el tiempo termina con el diálogo de finalizar abierto, el diálogo se cierra; duraciones como «1,5 horas»; la ficha del gimnasio dice «Ver gimnasio y registrar asistencia».
+
+**Resultado (8 de octubre de 2026):** 63 pruebas Node, 455 comprobaciones de navegador y 108 estados de pantalla/ancho en la auditoría de accesibilidad aprobados. Se revisó foco por teclado en siete recorridos principales. La apertura directa local funciona y el recorrido integral registró cero errores de ejecución o de assets. Hay 22 capturas en `review/` para teléfono y presentación.
 
 ```sh
 node --test tests/state.test.cjs tests/assistant.test.cjs tests/views.test.cjs

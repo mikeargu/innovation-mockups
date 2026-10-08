@@ -4,8 +4,8 @@ Repositorio de dos prototipos web conceptuales para explorar experiencias digita
 
 ## Proyectos
 
-- [Smart Campus](smart-campus/README.md): ayuda a explorar espacios y servicios del campus, revisar laboratorios, planear una reserva de biblioteca y registrar una visita simulada al gimnasio.
-- [Tec Conect](tec-conect/README.md): reúne una experiencia de comunidad con eventos, artículos y oportunidades, además de herramientas conceptuales de talento, mentoría y perfil estudiantil.
+- [Smart Campus v1](smart-campus-v1/README.md): ayuda a explorar espacios y servicios del campus, revisar laboratorios, planear una reserva de biblioteca y registrar una visita simulada al gimnasio.
+- [Tec Conect v1](tec-conect-v1/README.md): reúne una experiencia de comunidad con eventos, artículos y oportunidades, además de herramientas conceptuales de talento, mentoría y perfil estudiantil.
 
 Cada carpeta incluye el código de su demo, una guía de integración, pruebas y capturas de revisión. Consulta el README de cada proyecto para conocer sus recorridos y detalles.
 
@@ -17,22 +17,22 @@ Cada carpeta incluye el código de su demo, una guía de integración, pruebas y
 
 No se necesita `npm install`, compilación, backend ni conexión a Internet para abrir las demos. También puedes abrir directamente el `index.html` de cada proyecto.
 
-## Ejecutar Smart Campus
+## Ejecutar Smart Campus v1
 
 Desde la raíz del repositorio:
 
 ```sh
-python3 -m http.server 8766 --bind 127.0.0.1 --directory smart-campus
+python3 -m http.server 8766 --bind 127.0.0.1 --directory smart-campus-v1
 ```
 
 Abre <http://127.0.0.1:8766/>.
 
-## Ejecutar Tec Conect
+## Ejecutar Tec Conect v1
 
 En otra terminal, también desde la raíz del repositorio:
 
 ```sh
-python3 -m http.server 8765 --bind 127.0.0.1 --directory tec-conect
+python3 -m http.server 8765 --bind 127.0.0.1 --directory tec-conect-v1
 ```
 
 Abre <http://127.0.0.1:8765/>. Puedes detener cada servidor con `Ctrl+C`.
