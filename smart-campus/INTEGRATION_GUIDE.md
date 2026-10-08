@@ -48,7 +48,8 @@ Especificación: `../../docs/superpowers/specs/2026-10-07-smart-campus-design.md
 ## Continuidad
 
 - Última acción: implementar F6–F8 con subagentes (F6 Sonnet 5.5; F7 y F8 Opus 5.5) y verificar F9. Copia previa a los cambios: `../../tmp/smart-campus-pre-f6-snapshot-20261007/`.
-- Limitaciones conocidas: el formulario comprueba la ventana de llegada al mostrarse y de nuevo al enviar; si el tiempo termina con el diálogo de finalizar abierto, confirmar muestra «Este entrenamiento ya finalizó»; la ficha del gimnasio aún dice «Ver horarios y ocupación»; duraciones con punto decimal («1.5 horas»). Pendiente de la revisión anterior: búsqueda de Explorar con acentos compuestos (teclado macOS) y `role="group"` en chips/segmentado.
+- Correcciones del 8 de octubre de 2026 (limitaciones F6–F8 y revisión): búsqueda de Explorar actualiza solo resultados y mapa, sin reemplazar el campo (acentos con tecla muerta/IME y teclado móvil intactos); `role="group"` en chips y selector Mapa/Lista; tu propia reserva aparece como «Tu reserva» con enlace (motivo `own-reservation`) y la misma hora en otra sala como «Otra reserva tuya»; formateador de hora único `SCState.formatHour`; el formulario muestra «Quedan mm:ss» y pasa solo a «escanear de nuevo» al expirar; si el tiempo termina con el diálogo de finalizar abierto, el diálogo se cierra y se muestra el cierre por tiempo; ficha del gimnasio: «Ver gimnasio y registrar asistencia»; duraciones con coma decimal («1,5 horas»); insignia «En curso» con punto vivo. Copia previa: `../../tmp/smart-campus-pre-fixes-snapshot-20261008/`.
+- Limitaciones conocidas: ninguna abierta de la revisión técnica; queda la revisión visual del usuario.
 - Archivos de dominio: `data.js`, `state.js`, `demo-ai.js`; API exacta en `CONTRACT.md`. Pruebas en `tests/state.test.cjs` y `tests/assistant.test.cjs`.
 - Archivos de UI: `index.html`, `styles.css`, `ui.js`, `app.js` y seis módulos en `views/`. Pruebas de helpers en `tests/views.test.cjs`.
 - Pruebas de navegador: `tests/acceptance.browser.cjs`, `tests/accessibility.browser.cjs`. Reportes/capturas en `review/`.
@@ -59,8 +60,8 @@ Especificación: `../../docs/superpowers/specs/2026-10-07-smart-campus-design.md
 
 ## Cierre técnico · 7 de octubre de 2026
 
-- **Node (tras F9):** 60/60 aprobadas: dominio 41, asistente 14, helpers UI 5.
-- **Navegador (tras F9):** 441 comprobaciones, apertura directa `file://`, cero errores de ejecución o assets, 22 capturas; incluye escaneo, QR equivocado, temporizador sin pérdida de foco, finalizar, fin por tiempo con reloj simulado, llegada caducada, reinicio y reserva desde el chat.
+- **Node (8 oct):** 63/63 aprobadas: dominio 44, asistente 14, helpers UI 5.
+- **Navegador (8 oct):** 455 comprobaciones, apertura directa `file://`, cero errores de ejecución o assets, 22 capturas; incluye escaneo, QR equivocado, temporizador sin pérdida de foco, finalizar, fin por tiempo con reloj simulado, llegada caducada, reinicio y reserva desde el chat.
 - **Accesibilidad (tras F9):** 108 estados de ruta/ancho; contraste, tamaño de texto, campos de 16 px, objetivos de 44 px, fuente de iconos y estados textuales; foco visible en siete rutas; escáner e indicadores sin animación con movimiento reducido. Sin hallazgos.
 - **Cierre F0–F5 (histórico):** 40 Node, 376 checks de navegador, 84 estados de accesibilidad, 19 capturas.
 - **Revisiones:** especificación de dominio y UI aprobadas; calidad de dominio y revisión integrada final aprobadas. No hallazgos pendientes.

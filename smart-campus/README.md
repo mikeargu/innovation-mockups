@@ -39,7 +39,7 @@ El calendario de demostración usa el 7–9 de octubre de 2026. Las estimaciones
 
 `INTEGRATION_GUIDE.md` contiene las fases, la evidencia técnica y el registro de continuidad. La revisión visual del usuario se registra por separado.
 
-**Resultado:** 60 pruebas Node, 441 comprobaciones de navegador y 108 estados de pantalla/ancho en la auditoría de accesibilidad aprobados. Se revisó foco por teclado en siete recorridos principales. La apertura directa local funciona y el recorrido integral registró cero errores de ejecución o de assets. Hay 22 capturas en `review/` para teléfono y presentación.
+**Resultado:** 63 pruebas Node, 455 comprobaciones de navegador y 108 estados de pantalla/ancho en la auditoría de accesibilidad aprobados. Se revisó foco por teclado en siete recorridos principales. La apertura directa local funciona y el recorrido integral registró cero errores de ejecución o de assets. Hay 22 capturas en `review/` para teléfono y presentación.
 
 ```sh
 node --test tests/state.test.cjs tests/assistant.test.cjs tests/views.test.cjs

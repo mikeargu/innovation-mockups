@@ -43,9 +43,10 @@ UI may update `explore`, drafts and `assistant.query` directly. Convert form num
 ### Read methods
 
 - `normalize(value)` → lower-case, accent-insensitive text.
+- `formatHour(hour)` → `HH:00`/`HH:30`; the single hour formatter (`SCUI.hour` and the assistant reuse it).
 - `getSpace(id)` → catalog object or `null`.
 - `searchSpaces(state, overrides?)` → catalog objects. Uses `state.explore` merged with overrides `{query,category,minCapacity}`. `category:'all'` disables that filter. Searches name, capacity (`6 personas`), resources, software, requirements, description and location. No mutation.
-- `getLibrarySlots(state,{roomId,date,capacity?})` → 9 one-hour slots `{spaceId,roomId,date,hour,endHour,available,status,reason}` for starts 9–17. Status `available` or `unavailable`; reason `null`, `occupied-fixture`, `reserved`, or `user-conflict`. Invalid room/date/capacity returns `[]`.
+- `getLibrarySlots(state,{roomId,date,capacity?})` → 9 one-hour slots `{spaceId,roomId,date,hour,endHour,available,status,reason}` for starts 9–17. Status `available` or `unavailable`; reason `null`, `occupied-fixture`, `own-reservation` (the account's own booking in this room), `reserved` (another account), or `user-conflict` (the account has a booking in another room at that hour); `own-reservation` and `user-conflict` slots also carry `reservationId`. `reserveRoom` maps `own-reservation` to `code:'user-conflict'`. Invalid room/date/capacity returns `[]`.
 - `findRoomOptions(state,{date,hour,capacity})` → available library room options `{spaceId,roomId,name,capacity,date,hour,endHour}` sorted by fitting capacity then name. Invalid inputs return `[]`. Accounts cannot overlap confirmed bookings across rooms.
 - `findRoomAlternatives(state,{roomId,date,hour,capacity})` → at most 3 available room options with the same shape as `findRoomOptions`, ranked by nearest hour distance, then smallest fitting capacity, then earliest hour. Validates library room, demo date, integer hour 9–17 and requested capacity 1..selected room capacity; invalid input returns `[]`. Pure query: no state mutation. `reserveRoom` uses this same query when returning conflict alternatives; UI must also use it.
 - `getGymBlocks(gymId,date)` → copied blocks `{spaceId,gymId,name,date,hour,endHour,status,occupancyPercent,estimated}`. Invalid gym/date returns `[]`.
@@ -96,4 +97,4 @@ Blank/unsupported answers have `supported:false`, no options/actions, no invente
 
 ## Validation command
 
-`node --test tests/state.test.cjs tests/assistant.test.cjs tests/views.test.cjs` from this directory. Built-in Node runner: 60 tests (state 41, assistant 14, UI helpers 5) including browser classic-script globals.
+`node --test tests/state.test.cjs tests/assistant.test.cjs tests/views.test.cjs` from this directory. Built-in Node runner: 63 tests (state 44, assistant 14, UI helpers 5) including browser classic-script globals.
