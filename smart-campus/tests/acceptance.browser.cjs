@@ -327,10 +327,9 @@ const same = (actual, expected, message) => { assert.deepEqual(actual, expected,
     await clocked.goto(base + '#/gym/gym-prepatec/scan'); await clocked.waitForFunction(() => document.querySelector('main h1'));
     await clocked.getByRole('button', { name: 'Simular escaneo del QR de entrada', exact: true }).click();
     await clocked.locator('#attendance-form').waitFor();
-    verify(/^(10:00|9:5\d)$/.test(await clocked.locator('[data-arrival-countdown]').innerText()), 'Form shows how long the arrival stays valid');
+    verify(/^(10:00|09:5\d)$/.test(await clocked.locator('[data-arrival-countdown]').innerText()), 'Form shows how long the arrival stays valid');
     await clocked.clock.fastForward('02:00');
-    console.log('DEBUG countdown', JSON.stringify(await clocked.locator('[data-arrival-countdown]').innerText()), await clocked.evaluate(() => [Date.now(), SCState && 1]));
-    verify(/^7:5\d|^8:00$/.test(await clocked.locator('[data-arrival-countdown]').innerText()), 'Arrival validity counts down live');
+    verify(/^(08:00|07:5\d)$/.test(await clocked.locator('[data-arrival-countdown]').innerText()), 'Arrival validity counts down live');
     await clocked.clock.fastForward('08:01');
     await clocked.waitForFunction(() => !document.getElementById('attendance-form'), null, { timeout: 4000 });
     verify((await clocked.locator('.notice.error').innerText()).includes('expiró'), 'Form switches to the scan-again guard when the arrival expires');
