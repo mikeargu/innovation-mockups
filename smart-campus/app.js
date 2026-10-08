@@ -2,7 +2,7 @@
   'use strict';
   var D = root.SCData, S = root.SCState, A = root.SCAssistant, U = root.SCUI, V = root.SCViews;
   var state = S.createState(), ui = freshUI(), route, main = document.querySelector('main'), live = document.getElementById('live-status'), dialog = document.getElementById('confirm-dialog'), toastTimer, ticker = null;
-  var TICK_MS = 1000, TIMEOUT_MESSAGE = 'Tiempo completado. Entrenamiento finalizado.';
+  var TICK_MS = 1000, TIMEOUT_MESSAGE = 'Tiempo completado. Entrenamiento finalizado.', EXPIRED_MESSAGE = 'La verificación de llegada expiró. Escanea de nuevo el QR de la entrada.', dialogSessionId = null;
   function freshUI() { return { filtersOpen: false, libraryError: '', libraryAlternatives: null, attendanceError: '', scanError: '', scanCode: '', assistantError: '' }; }
   function announce(message) { live.textContent = ''; setTimeout(function () { live.textContent = message; }, 20); }
   function toast(message) { var node = document.getElementById('toast'); node.textContent = message; node.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(function () { node.classList.remove('show'); }, 2800); announce(message); }
@@ -32,12 +32,15 @@
   function findSession(id) { return state.attendance.find(function (record) { return record.id === id; }); }
   function stopTimer() { clearInterval(ticker); ticker = null; }
   function syncTimer() {
-    var running = state.attendance.some(function (record) { return record.status === 'active'; });
+    var running = state.attendance.some(function (record) { return record.status === 'active'; }) || arrivalPending();
     if (running && !ticker) ticker = setInterval(tick, TICK_MS);
     if (!running) stopTimer();
   }
+  function arrivalPending() { return route && route.view === 'gymAttendance' && !!state.arrival && Date.now() < state.arrival.expiresAt; }
+  function arrivalExpiredOnForm() { return route.view === 'gymAttendance' && !!state.arrival && Date.now() >= state.arrival.expiresAt && !!main.querySelector('#attendance-form'); }
   function updateCountdowns() {
     var now = Date.now();
+    main.querySelectorAll('[data-arrival-countdown]').forEach(function (node) { if (state.arrival) node.textContent = U.duration(state.arrival.expiresAt - now); });
     main.querySelectorAll('[data-countdown]').forEach(function (node) { var record = findSession(node.dataset.countdown); if (record) node.textContent = U.duration(S.getSessionRemainingMs(record, now)); });
     main.querySelectorAll('[data-progress]').forEach(function (node) {
       var record = findSession(node.dataset.progress), total = record ? record.plannedEndAt - record.startedAt : 0;
@@ -46,8 +49,10 @@
   }
   function focusHeading() { var heading = main.querySelector('h1'); main.scrollTop = 0; heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
   function tick() {
+    if (arrivalExpiredOnForm()) { focusError(EXPIRED_MESSAGE); syncTimer(); return; }
     var synced = S.syncGymSessions(state);
     if (!synced.ok || !synced.finished.length) { updateCountdowns(); return; }
+    if (dialog.open && synced.finished.some(function (record) { return record.id === dialogSessionId; })) dialog.close();
     var hadFocus = main.contains(document.activeElement);
     render(false);
     if (hadFocus && !main.contains(document.activeElement) && !dialog.open) focusHeading();
@@ -72,15 +77,24 @@
     else restoreFocus(control);
     syncTimer();
   }
+  function updateExploreResults(query) {
+    var region = document.getElementById('explore-results');
+    if (state.explore.query === query && region) return;
+    state.explore.query = query;
+    if (!region) { render(false); return; }
+    region.innerHTML = V.exploreResults(state);
+    announce(S.searchSpaces(state).length + ' espacios encontrados.');
+  }
   function clearBookingError() { ui.libraryError = ''; ui.libraryAlternatives = null; }
   function confirm(config) {
     var opener = document.activeElement;
+    dialogSessionId = config.sessionId || null;
     dialog.innerHTML = '<span class="dialog-icon">' + U.icon(config.icon || 'info') + '</span><h2 id="dialog-title">' + U.escape(config.title) + '</h2><p id="dialog-description">' + U.escape(config.body) + '</p><div class="button-row"><button class="button ' + (config.danger ? 'danger' : '') + '" id="dialog-confirm">' + U.escape(config.label) + '</button><button class="button ghost" id="dialog-cancel">Volver</button></div>';
     function close() { dialog.close(); }
     dialog.querySelector('#dialog-cancel').addEventListener('click', close);
     dialog.querySelector('#dialog-confirm').addEventListener('click', function () { dialog.close(); config.onConfirm(); });
     dialog.addEventListener('close', function restore() {
-      dialog.removeEventListener('close', restore);
+      dialog.removeEventListener('close', restore); dialogSessionId = null;
       var replacement = opener && opener.dataset.action ? Array.from(main.querySelectorAll('[data-action]')).find(function (candidate) { return candidate.dataset.action === opener.dataset.action && candidate.dataset.id === opener.dataset.id; }) : null;
       if (opener && opener.isConnected) opener.focus();
       else if (replacement) replacement.focus();
@@ -90,9 +104,10 @@
     dialog.querySelector('#dialog-cancel').focus();
   }
   main.addEventListener('input', function (event) {
-    if (event.target.id === 'explore-query') { state.explore.query = event.target.value; render(false); announce(S.searchSpaces(state).length + ' espacios encontrados.'); }
+    if (event.target.id === 'explore-query' && !event.isComposing) updateExploreResults(event.target.value);
     if (event.target.id === 'assistant-query') state.assistant.query = event.target.value;
   });
+  main.addEventListener('compositionend', function (event) { if (event.target.id === 'explore-query') updateExploreResults(event.target.value); });
   main.addEventListener('change', function (event) {
     var node = event.target;
     if (node.id === 'min-capacity') { state.explore.minCapacity = Number(node.value); render(false); announce(S.searchSpaces(state).length + ' espacios encontrados.'); }
@@ -144,7 +159,7 @@
       if (verified.ok) { clearScanError(); ui.attendanceError = ''; navigate('#/gym/' + route.id + '/attendance'); }
       else { ui.scanError = verified.message; ui.scanCode = verified.code; focusError(verified.message); }
     }
-    if (action === 'finish-session') confirm({ title: '¿Finalizar entrenamiento?', body: 'Se registrará tu hora de salida y la sesión aparecerá como finalizada en tu actividad.', label: 'Confirmar finalización', icon: 'stop_circle', onConfirm: function () { var finished = S.finishGymSession(state, node.dataset.id, { reason: 'manual' }); render(false); toast(finished.ok ? 'Entrenamiento finalizado.' : finished.message); } });
+    if (action === 'finish-session') confirm({ title: '¿Finalizar entrenamiento?', body: 'Se registrará tu hora de salida y la sesión aparecerá como finalizada en tu actividad.', label: 'Confirmar finalización', icon: 'stop_circle', sessionId: node.dataset.id, onConfirm: function () { S.syncGymSessions(state); var record = findSession(node.dataset.id), alreadyOver = record && record.status !== 'active', finished = alreadyOver ? null : S.finishGymSession(state, node.dataset.id, { reason: 'manual' }); render(false); toast(alreadyOver ? TIMEOUT_MESSAGE : finished.ok ? 'Entrenamiento finalizado.' : finished.message); } });
     if (action === 'simulate-timeout') {
       var running = findSession(node.dataset.id), ended = running ? S.finishGymSession(state, running.id, { reason: 'timeout', now: running.plannedEndAt }) : { ok: false, message: 'No se encontró el registro de asistencia.' };
       render(false); focusHeading(); toast(ended.ok ? TIMEOUT_MESSAGE : ended.message);

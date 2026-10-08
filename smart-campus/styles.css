@@ -190,10 +190,13 @@ main{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:24px 20px 32p
 .time-slot.occupied span{color:#606d7f}
 .time-slot.selected{background:#eaf1ff;border:2px solid var(--blue);color:var(--blue);padding:8px 3px}
 .time-slot.selected span{color:var(--blue)}
-.slot-legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin:10px 0}
+.slot-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--muted);margin:10px 0}
 .slot-legend span{display:flex;align-items:center;gap:6px}
 .slot-legend i{width:8px;height:8px;background:#2e8863;border-radius:50%}
 .slot-legend .occupied-dot{background:#a4aebc}
+.slot-legend .own-dot{background:var(--purple)}
+.time-slot.own{background:#f1eefb;border:2px solid var(--purple);color:#4a3d86;padding:8px 3px;text-decoration:none}
+.time-slot.own span{color:#4a3d86;font-weight:600}
 .alternative-card{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #dce5f2;background:#fff;width:100%;border-radius:12px;padding:12px;text-align:left;margin-top:9px;min-height:70px}
 .alternative-card strong{font-size:13px}
 .alternative-card .symbol{color:var(--blue);font-size:20px}
@@ -325,6 +328,9 @@ dialog .button{min-height:46px}
 .presence-line .symbol{font-size:18px;margin-top:1px;color:#5d7086}
 .presence-line.here{background:#e9f5ef;color:#24603f}
 .presence-line.here .symbol{color:var(--green)}
+.live-badge{display:inline-flex;align-items:center;gap:6px}
+.live-badge .live-dot{width:8px;height:8px}
+.arrival-left strong{font-variant-numeric:tabular-nums;color:var(--ink)}
 .live-dot{width:10px;height:10px;border-radius:50%;background:var(--live);flex-shrink:0;box-shadow:0 0 0 0 #3ddc8466;animation:live-pulse 1.8s var(--ease-out) infinite}
 @keyframes live-pulse{70%{box-shadow:0 0 0 8px #3ddc8400}100%{box-shadow:0 0 0 0 #3ddc8400}}
 .session-banner{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:16px;padding:14px 14px 14px 16px;min-height:64px;box-shadow:0 10px 28px #0d215033;transition:transform .15s var(--ease-out)}

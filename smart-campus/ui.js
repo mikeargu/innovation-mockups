@@ -8,7 +8,7 @@
     return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]; });
   }
   function icon(name, extra) { return '<span class="symbol ' + (extra || '') + '" aria-hidden="true">' + escape(name) + '</span>'; }
-  function hour(value) { return String(Math.floor(value)).padStart(2, '0') + ':' + (value % 1 ? '30' : '00'); }
+  var hour = S.formatHour;
   function date(value, full) { var item = D.dates.find(function (entry) { return entry.value === value; }); return item ? item[full ? 'label' : 'shortLabel'] : value; }
   function category(id) { return D.categories.find(function (item) { return item.id === id; }) || { label: '', color: '#0039a6' }; }
   function capital(value) { return value.charAt(0).toUpperCase() + value.slice(1); }
@@ -44,7 +44,7 @@
     if (!minutes) return 'menos de 1 min';
     return h ? h + ' h' + (m ? ' ' + m + ' min' : '') : m + ' min';
   }
-  function hours(value) { return value + (value === 1 ? ' hora' : ' horas'); }
+  function hours(value) { return String(value).replace('.', ',') + (value === 1 ? ' hora' : ' horas'); }
   function parseRoute(hash) {
     var parts = hash.replace(/^#\/?/, '').split('/');
     var first = parts[0];

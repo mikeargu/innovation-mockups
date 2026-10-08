@@ -22,10 +22,7 @@
     if (/(sala|biblioteca|estudio|estudiar)/.test(text)) return 'library-booking';
     return 'unsupported';
   }
-  function formatHour(hour) {
-    var hours = Math.floor(hour);
-    return (hours < 10 ? '0' : '') + hours + ':' + (hour % 1 ? '30' : '00');
-  }
+  var formatHour = S.formatHour;
   function dateLabel(date) {
     var item = D.dates.find(function (entry) { return entry.value === date; });
     return item ? item.label : 'la fecha seleccionada';

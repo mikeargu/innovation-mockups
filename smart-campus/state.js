@@ -5,6 +5,7 @@
   function normalize(value) {
     return String(value == null ? '' : value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   }
+  function formatHour(hour) { return String(Math.floor(hour)).padStart(2, '0') + ':' + (hour % 1 ? '30' : '00'); }
   function getSpace(id) { return D.spaces.find(function (space) { return space.id === id; }) || null; }
   function validDate(date) { return D.dates.some(function (item) { return item.value === date; }); }
   function failure(code, message) { return { ok: false, code: code, message: message }; }
@@ -50,20 +51,26 @@
     if (!Number.isInteger(input.capacity) || input.capacity < 1 || input.capacity > space.capacity) return failure('invalid-capacity', 'La cantidad de personas debe estar dentro de la capacidad de la sala.');
     return null;
   }
-  function slotReason(state, roomId, date, hour) {
-    if (D.libraryOccupancy.some(function (slot) { return slot.roomId === roomId && slot.date === date && slot.hour === hour; })) return 'occupied-fixture';
-    if (state.reservations.some(function (slot) { return slot.status === 'confirmed' && slot.roomId === roomId && slot.date === date && slot.hour === hour; })) return 'reserved';
-    if (state.reservations.some(function (slot) { return slot.status === 'confirmed' && slot.userId === state.account.id && slot.date === date && slot.hour === hour; })) return 'user-conflict';
-    return null;
+  function ownBooking(state, date, hour) {
+    return state.reservations.find(function (slot) { return slot.status === 'confirmed' && slot.userId === state.account.id && slot.date === date && slot.hour === hour; }) || null;
   }
+  function slotState(state, roomId, date, hour) {
+    if (D.libraryOccupancy.some(function (slot) { return slot.roomId === roomId && slot.date === date && slot.hour === hour; })) return { reason: 'occupied-fixture' };
+    var own = ownBooking(state, date, hour);
+    if (own && own.roomId === roomId) return { reason: 'own-reservation', reservationId: own.id };
+    if (state.reservations.some(function (slot) { return slot.status === 'confirmed' && slot.roomId === roomId && slot.date === date && slot.hour === hour; })) return { reason: 'reserved' };
+    if (own) return { reason: 'user-conflict', reservationId: own.id };
+    return { reason: null };
+  }
+  function slotReason(state, roomId, date, hour) { return slotState(state, roomId, date, hour).reason; }
   function getLibrarySlots(state, input) {
     input = input || {};
     if (validateBooking(Object.assign({}, input, { hour: 9, capacity: input.capacity === undefined ? 1 : input.capacity }))) return [];
     var slots = [];
     for (var hour = 9; hour <= 17; hour++) {
-      var reason = slotReason(state, input.roomId, input.date, hour);
-      slots.push({ spaceId: input.roomId, roomId: input.roomId, date: input.date, hour: hour, endHour: hour + 1,
-        available: reason === null, status: reason === null ? 'available' : 'unavailable', reason: reason });
+      var slot = slotState(state, input.roomId, input.date, hour), reason = slot.reason;
+      slots.push(Object.assign({ spaceId: input.roomId, roomId: input.roomId, date: input.date, hour: hour, endHour: hour + 1,
+        available: reason === null, status: reason === null ? 'available' : 'unavailable', reason: reason }, slot.reservationId ? { reservationId: slot.reservationId } : {}));
     }
     return slots;
   }
@@ -93,8 +100,8 @@
     if (invalid) return invalid;
     var reason = slotReason(state, input.roomId, input.date, input.hour);
     if (reason) return {
-      ok: false, code: reason === 'user-conflict' ? 'user-conflict' : 'unavailable',
-      message: reason === 'user-conflict' ? 'Ya tienes una reserva confirmada en ese bloque. Revisa otro horario.' : 'Ese bloque no está disponible. Revisa las alternativas.',
+      ok: false, code: reason === 'user-conflict' || reason === 'own-reservation' ? 'user-conflict' : 'unavailable',
+      message: reason === 'own-reservation' ? 'Ya reservaste esta sala en ese bloque. Revisa tu reserva o elige otro horario.' : reason === 'user-conflict' ? 'Ya tienes una reserva confirmada en ese bloque. Revisa otro horario.' : 'Ese bloque no está disponible. Revisa las alternativas.',
       alternatives: findRoomAlternatives(state, input)
     };
     var space = getSpace(input.roomId);
@@ -232,7 +239,7 @@
   function clearConsultations(state) { state.history.length = 0; return { ok: true }; }
 
   var api = {
-    createState: createState, resetState: resetState, normalize: normalize, getSpace: getSpace, searchSpaces: searchSpaces,
+    createState: createState, resetState: resetState, normalize: normalize, formatHour: formatHour, getSpace: getSpace, searchSpaces: searchSpaces,
     getLibrarySlots: getLibrarySlots, findRoomOptions: findRoomOptions, findRoomAlternatives: findRoomAlternatives, reserveRoom: reserveRoom, cancelReservation: cancelReservation,
     getGymBlocks: getGymBlocks, recommendGymBlocks: recommendGymBlocks,
     verifyGymArrival: verifyGymArrival, startGymSession: startGymSession, finishGymSession: finishGymSession, syncGymSessions: syncGymSessions,
