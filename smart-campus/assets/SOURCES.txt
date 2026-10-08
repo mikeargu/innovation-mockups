@@ -1,0 +1,14 @@
+Smart Campus · local prototype assets
+
+Poppins-Regular.ttf, Poppins-SemiBold.ttf, Poppins-Bold.ttf:
+Copied from the existing Tec Conect mockup's bundled Google Fonts Poppins files.
+License: SIL Open Font License (OFL.txt).
+
+MaterialSymbolsRounded.woff2:
+Copied from the existing Tec Conect mockup's bundled Google Material Symbols Rounded font.
+License: Apache License 2.0 (MaterialSymbols-LICENSE.txt).
+
+Campus and library diagrams are original schematic UI drawings for this concept.
+They do not represent an official campus map or authorized architectural plan.
+
+Visual direction: /Users/mike_argu/Documents/scuola/innovation/brandstrategy.md.

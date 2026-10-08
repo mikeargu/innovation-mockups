@@ -1,0 +1,73 @@
+.mentor-assistant{margin:0 0 32px;padding:24px;border:1px solid color-mix(in srgb,var(--accent) 16%,#fff);border-radius:12px;background:#fff;box-shadow:inset 4px 0 0 var(--accent)}
+.mentor-assistant h2{font-size:20px;margin:6px 0 8px;line-height:1.4}
+.mentor-assistant .eyebrow{font-size:12px}
+.career-context-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin:0 0 16px}
+.career-context{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0}
+.career-context div{min-width:0}
+.career-context dt{font-size:12px;font-weight:600;color:#5b6a82}
+.career-context dd{margin:2px 0 0;font-size:14px;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+#career-form label{display:block;font-size:14px;font-weight:600}
+#career-form .field-hint{margin:4px 0 0;font-size:13px;color:#5b6a82}
+#career-form .required-label{font-size:12px;color:#5b6a82}
+#career-form textarea{display:block;box-sizing:border-box;width:100%;min-height:104px;margin-top:8px;padding:12px;border:1px solid #cfd6e2;border-radius:8px;font:inherit;font-size:14px;line-height:1.6;resize:vertical}
+#career-form textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#career-form textarea[aria-invalid="true"]{border-color:#c0392b}
+#career-form .field-error{display:flex;align-items:flex-start;gap:6px;margin:8px 0 0;font-size:13px;color:#b3261e}
+#career-form>.button{margin-top:4px}
+.career-summary{margin-top:24px;padding-top:20px;border-top:1px solid #efe7df}
+.career-summary h3{margin:10px 0 6px;font-size:18px;line-height:1.4}
+.career-summary h3:focus{outline:none}
+.orientation-tag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;min-height:28px;padding:4px 10px;border-radius:8px;background:var(--tint);color:var(--accent);font-size:12px;font-weight:600}
+.orientation-tag>.icon{font-size:17px}
+.support-network{margin:0 0 32px}
+.network-intro{margin:0 0 16px;font-size:14px;color:#5b6a82}
+.network-groups{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.network-group{display:flex;flex-direction:column;gap:12px;min-width:0;padding:16px;border:1px solid #e5e9f0;border-radius:12px;background:#fafbfd}
+.network-group h3{margin:0;font-size:15px;line-height:1.4}
+.network-group h3:focus{outline:none}
+.network-note,.network-empty{display:flex;align-items:flex-start;gap:6px;margin:0;font-size:13px;color:#5b6a82}
+.network-note>.icon,.network-empty>.icon{font-size:17px}
+.support-card{padding:14px;border:1px solid #e5e9f0;border-radius:8px;background:#fff}
+.support-card-top{display:flex;align-items:center;gap:12px}
+.support-role-label{display:inline-block;font-size:12px;font-weight:600;color:var(--accent)}
+.support-card h4{margin:2px 0 0;font-size:15px;line-height:1.4}
+.support-card h4 a{color:inherit}
+.support-card .person-career{margin:0;font-size:12px}
+.support-why{margin:12px 0 0;font-size:13px;line-height:1.6}
+.support-card-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+.support-card-actions .text-link{font-size:13px}
+.pin-button{font-size:13px}
+.support-explorer-card .person-card-footer{flex-wrap:wrap;gap:8px}
+.orientation-note{display:flex;align-items:flex-start;gap:8px;margin:0 0 24px;padding:12px 14px;border-radius:8px;background:var(--tint);font-size:13px;line-height:1.6;color:var(--ink)}
+.orientation-note>.icon{flex:none;font-size:18px;color:var(--accent)}
+.career-plan{display:flex;flex-direction:column;gap:32px;margin-bottom:24px}
+.plan-section h2{margin:0 0 12px;font-size:20px;line-height:1.4}
+.plan-goal{margin:12px 0 0;font-size:14px;font-style:italic;color:#5b6a82;overflow-wrap:anywhere}
+.plan-stages{display:grid;gap:12px;margin:0;padding:0;list-style:none;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.plan-stage{display:flex;gap:12px;min-width:0;padding:16px;border:1px solid #e5e9f0;border-radius:12px;background:#fff}
+.plan-stage-number{flex:none;display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:700}
+.plan-stage h3{margin:0;font-size:15px}
+.plan-period{margin:2px 0 8px;font-size:12px;color:#5b6a82}
+.plan-stage ul,.plan-card ul{margin:0;padding-left:18px;font-size:13px;line-height:1.6}
+.plan-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.plan-card{display:flex;flex-direction:column;gap:8px;min-width:0;padding:16px;border:1px solid #e5e9f0;border-radius:12px;background:#fff}
+.plan-card h3{margin:0;font-size:16px;line-height:1.4}
+.plan-card p{margin:0;font-size:13px;line-height:1.6}
+.plan-hint{margin:0 0 12px;font-size:13px;color:#5b6a82}
+.alternative-card.is-selected{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.alternative-facts{margin:0}
+.alternative-facts dt{font-size:12px;font-weight:600;color:#5b6a82}
+.alternative-facts dd{margin:2px 0 8px;font-size:13px}
+.alternative-card h4{margin:4px 0 0;font-size:14px}
+.alternative-card .button{margin-top:auto}
+.support-card h3.support-name{margin:2px 0 0;font-size:15px;line-height:1.4}
+.support-card h3.support-name a{color:inherit}
+.support-card .support-name a{display:inline-flex;align-items:center;min-height:44px}
+/* Legacy shared classes are 8–10px; the F5 surfaces keep text at 12px or more. */
+.plan-card .text-link,.career-summary .text-link,.career-context-row .text-link{font-size:13px}
+.support-card .status,.support-explorer-card .status{font-size:12px}
+.support-explorer-card .tag,.support-explorer-card .availability,.support-explorer-card .person-career{font-size:12px}
+.support-explorer-card .person-bio{font-size:13px}
+.support-explorer-card h3{font-size:15px}
+.mentor .back-link.mentor-plan-back{font-size:13px}
+@media (max-width:767px){.mentor-assistant{padding:20px 16px}.support-explorer-card .tag,.support-explorer-card .availability,.support-explorer-card .person-career{font-size:12px}}

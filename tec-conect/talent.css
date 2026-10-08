@@ -1,0 +1,45 @@
+.talent-assistant{margin:0 0 32px;padding:24px;border:1px solid color-mix(in srgb,var(--accent) 14%,#fff);border-radius:12px;background:#fff;box-shadow:inset 4px 0 0 var(--accent)}
+.talent-assistant h2{font-size:20px;margin:6px 0 8px;line-height:1.4}
+.assistant-intro{margin:0 0 16px;font-size:14px;color:#5b6a82}
+#assistant-form label{display:block;font-size:14px;font-weight:600}
+#assistant-form .field-hint{margin:4px 0 0}
+#assistant-form textarea{display:block;box-sizing:border-box;width:100%;min-height:104px;margin-top:8px;padding:12px;border:1px solid #cfd6e2;border-radius:8px;font:inherit;font-size:14px;line-height:1.6;resize:vertical}
+#assistant-form textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#assistant-form textarea[aria-invalid="true"]{border-color:#c0392b}
+#assistant-form>.button{margin-top:4px}
+.assistant-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.assistant-chip{min-height:44px;padding:8px 14px;border:1px solid color-mix(in srgb,var(--accent) 30%,#fff);border-radius:8px;background:var(--tint);color:var(--accent);font-size:13px;font-weight:600;line-height:1.4;text-align:left}
+.assistant-chip:hover{background:#fff}
+.assistant-chip:focus-visible,.assistant-explore .button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.assistant-result{margin-top:28px;padding-top:24px;border-top:1px solid #ece8f1}
+.assistant-example-tag{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:4px 10px;border-radius:8px;background:var(--tint);color:var(--accent);font-size:12px;font-weight:600}
+.assistant-example-tag>.icon{font-size:17px}
+.assistant-result h3{font-size:18px;margin:12px 0 6px;line-height:1.4}
+.assistant-result h3:focus{outline:none}
+.assistant-note{margin:0;font-size:13px;color:#5b6a82}
+.assistant-roles{display:grid;gap:16px;margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.assistant-role{min-width:0;padding:16px;border:1px solid #e5e9f0;border-radius:12px;background:#fafbfd}
+.assistant-role h4{margin:0;font-size:16px;line-height:1.4}
+.assistant-need{margin:4px 0 14px;font-size:13px;color:#5b6a82}
+.assistant-people{display:grid;gap:12px}
+.assistant-person{padding:14px;border:1px solid #e5e9f0;border-radius:8px;background:#fff}
+.assistant-person-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.assistant-person h5{margin:0;font-size:15px;line-height:1.4}
+.assistant-person .person-career{margin:0;font-size:12px}
+.assistant-facts{margin:12px 0 0}
+.assistant-facts dt{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#5b6a82}
+.assistant-facts dt>.icon{font-size:16px}
+.assistant-facts dd{margin:2px 0 10px;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.assistant-person-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.assistant-person-actions .text-link{margin-left:auto;font-size:13px}
+.assistant-empty{display:flex;align-items:flex-start;gap:8px;margin:0;font-size:13px;color:#5b6a82}
+.assistant-explore{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.assistant-explore .button{flex:1 1 200px;font-size:13px}
+.talent-assistant .eyebrow{font-size:12px}
+.talent-assistant .required-label{font-size:12px;color:#5b6a82}
+#assistant-form .field-hint{font-size:13px;color:#5b6a82}
+#assistant-form .field-error{display:flex;align-items:flex-start;gap:6px;margin:8px 0 0;font-size:13px;color:#b3261e}
+.assistant-person .status.pending{font-size:12px}
+.assistant-answered{margin:0 0 6px;font-size:13px;color:#5b6a82;overflow-wrap:anywhere}
+.assistant-answered strong{color:var(--ink)}
+@media (max-width:767px){.talent-assistant{padding:20px 16px}.assistant-chip{flex:1 1 100%}}

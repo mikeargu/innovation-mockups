@@ -1,0 +1,14 @@
+(function (root) {
+  'use strict';
+  var U = root.SCUI, A = root.SCAssistant;
+  function answerCard(answer) {
+    return '<section class="assistant-response" aria-label="Respuesta del asistente"><span class="badge">' + U.icon('auto_awesome') + U.escape(answer.label) + '</span><h2>' + U.escape(answer.title) + '</h2><p>' + U.escape(answer.body) + '</p>' +
+      (answer.options.length ? '<div class="answer-options">' + answer.options.map(function (option, index) {
+        var action = answer.actions[index], details = option.roomId ? 'Sala para ' + option.capacity + ' · grupo de ' + (answer.request && answer.request.capacity ? answer.request.capacity : option.capacity) + ' · ' + U.date(option.date) + ' · ' + U.hour(option.hour) + '–' + U.hour(option.endHour) : option.gymId ? U.date(option.date) + ' · ' + U.hour(option.hour) + '–' + U.hour(option.endHour) + ' · ' + option.occupancyPercent + '% estimado' : option.responsibleArea;
+        return '<article class="answer-option"><h3>' + U.escape(option.name) + '</h3><p>' + U.escape(details) + '</p>' + (action ? '<button class="button secondary" data-action="assistant-action" data-index="' + index + '">' + U.escape(action.label) + U.icon('arrow_forward') + '</button>' : '') + '</article>';
+      }).join('') + '</div>' : '') + '<div class="answer-limits">' + answer.limitations.map(function (text) { return '<p>' + U.icon('info') + '<span>' + U.escape(text) + '</span></p>'; }).join('') + '</div><div class="source-note">' + U.icon('source') + '<span>' + U.escape(answer.source.label) + '<br>Actualización: ' + U.escape(U.date(answer.source.updatedAt)) + '</span></div></section>';
+  }
+  root.SCViews.assistant = function (state, ui) {
+    return U.heading('¿Qué tienes en mente?', 'Encuentra un espacio para lo que viene.') + '<div class="assistant-intro"><span class="assistant-orb">' + U.icon('auto_awesome') + '</span><div><h2>Tu asistente de campus</h2><p>Prueba una consulta de ejemplo.</p></div></div><span class="eyebrow">Ideas para comenzar</span><div class="prompt-list">' + A.suggestedPrompts.map(function (prompt, index) { return '<button data-action="assistant-prompt" data-index="' + index + '"><span>' + U.escape(prompt) + '</span>' + U.icon('north_west') + '</button>'; }).join('') + '</div><form id="assistant-form"><label class="field"><span>Tu consulta</span><textarea name="question" id="assistant-query" placeholder="Por ejemplo: necesito una sala para seis personas…">' + U.escape(state.assistant.query) + '</textarea></label>' + U.message(ui.assistantError, 'error') + '<button class="button" type="submit">Consultar' + U.icon('arrow_forward') + '</button></form>' + (state.assistant.answer ? answerCard(state.assistant.answer) : U.message('Las respuestas son ejemplos sobre biblioteca, impresión 3D y horarios del gimnasio. Revisa cada opción antes de confirmar una operación.'));
+  };
+})(globalThis);

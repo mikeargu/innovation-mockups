@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checks": 441,
+  "widths": [
+    360,
+    390,
+    430,
+    1440
+  ],
+  "routes": 24,
+  "directFile": true,
+  "captures": [
+    "390-explore-map.png",
+    "390-lab-detail.png",
+    "390-lab-access.png",
+    "390-library-plan.png",
+    "390-library-book.png",
+    "390-library-review.png",
+    "390-reservation-confirmed.png",
+    "390-gym.png",
+    "390-gym-scan.png",
+    "390-gym-form.png",
+    "390-gym-session.png",
+    "390-gym-finished.png",
+    "390-assistant-library.png",
+    "390-assistant-lab.png",
+    "390-assistant-gym.png",
+    "390-assistant-booking.png",
+    "390-activity-favorites.png",
+    "390-profile.png",
+    "360-explore.png",
+    "390-explore.png",
+    "430-explore.png",
+    "1440-explore.png"
+  ],
+  "failures": []
+}

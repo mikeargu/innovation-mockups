@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0039A6">
+  <title>Smart Campus · Explora tu campus</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="state.js"></script>
+  <script defer src="demo-ai.js"></script>
+  <script defer src="ui.js"></script>
+  <script defer src="views/explore.js"></script>
+  <script defer src="views/details.js"></script>
+  <script defer src="views/library.js"></script>
+  <script defer src="views/gyms.js"></script>
+  <script defer src="views/assistant.js"></script>
+  <script defer src="views/activity.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" id="skip-link">Saltar al contenido</a>
+  <div class="phone">
+    <header class="app-header">
+      <a class="brand" href="#/explore" aria-label="Smart Campus · Inicio"><span class="brand-mark"><span class="symbol" aria-hidden="true">hub</span></span><span><strong>Smart Campus</strong><span>TEC · Tu campus, a tu ritmo</span></span></a>
+      <a class="avatar" href="#/profile" aria-label="Mi cuenta de ejemplo">ST</a>
+    </header>
+    <div class="concept"><span class="concept-dot"></span>Concepto · datos ficticios</div>
+    <main id="main-content" tabindex="-1"></main>
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <a href="#/explore" data-nav="explore"><span class="symbol" aria-hidden="true">explore</span><span>Explorar</span></a>
+      <a href="#/assistant" data-nav="assistant"><span class="symbol" aria-hidden="true">auto_awesome</span><span>Asistente</span></a>
+      <a href="#/activity/reservations" data-nav="activity"><span class="symbol" aria-hidden="true">calendar_month</span><span>Mi actividad</span></a>
+    </nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="sr-only" id="live-status" role="status" aria-live="polite" aria-atomic="true"></div>
+    <dialog id="confirm-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description"></dialog>
+  </div>
+</body>
+</html>
