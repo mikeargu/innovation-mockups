@@ -30,8 +30,8 @@ test('the Azul TEC anchor and the area accents keep their tokens', () => {
   assert.ok(css['styles.css'].includes('--purple:#a12780') && css['styles.css'].includes('--orange:#bb4c02'));
 });
 
-test('the shell marks the concept, the fictitious data and the working name', () => {
+test('the shell labels demo content and the working name', () => {
   const app = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
-  assert.ok(app.includes('Concepto · datos ficticios'));
+  assert.ok(app.includes('Concepto · contenido demo'));
   assert.ok(app.includes('nombre de trabajo sujeto a revisión institucional'));
 });

@@ -28,7 +28,6 @@ const routes = [
     page.on('requestfailed', r=>errors.push(r.url()+': '+r.failure().errorText));
     page.on('response', r=>{if(r.status()>=400 && !r.url().endsWith('/favicon.ico')) errors.push(r.status()+' '+r.url());});
     const targets=[...routes.map(route=>({route,url:base+'#'+route,source:false})),
-      {route:'source-article',url:base+data.pulse.find(item=>item.category==='news').articleUrl,source:true},
       {route:'source-opportunity',url:base+data.pulse.find(item=>item.category==='opportunities').ctaUrl,source:true}];
     for (const width of [360,390,430,768,1024,1440]) {
       await page.setViewportSize({width,height:width<768?844:960});

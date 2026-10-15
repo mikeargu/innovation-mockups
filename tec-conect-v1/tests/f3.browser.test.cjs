@@ -62,12 +62,12 @@ async function eventFlow(page){
  // Workshops follow the same path; articles and internships do not.
  await nav(page,'#/pulse/taller-cv');
  equal(await page.getByRole('link',{name:'Registrarme'}).count(),1,'Workshops should be registrable');
- for(const id of ['huerto','practica-marketing']){
+ for(const id of ['cem-obra-musical-fitu-2026','practica-marketing']){
   await nav(page,'#/pulse/'+id);
   const body=await text(page);
   for(const word of ['Registrarme','Agregar a mi calendario','Postúlate'])check(!body.includes(word),id+' must not show '+word);
  }
- for(const hash of ['#/pulse/huerto/register','#/pulse/practica-finanzas/register','#/pulse/laboratorio-ideas/apply','#/pulse/practica-marketing/apply']){
+ for(const hash of ['#/pulse/cem-obra-musical-fitu-2026/register','#/pulse/practica-finanzas/register','#/pulse/laboratorio-ideas/apply','#/pulse/practica-marketing/apply']){
   await nav(page,hash);
   equal(await page.evaluate(()=>location.hash),'#/pulse','Invalid action route '+hash+' should recover to Pulse');
  }

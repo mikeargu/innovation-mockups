@@ -1,5 +1,13 @@
 # Registro de cambios — Tec Conect
 
+## 15 de octubre de 2026 — Artículos de CONECTA en Campus Pulse
+
+- Se reemplazan los siete artículos ficticios por ocho artículos del Tec Estado de México: dos por categoría editorial (Arte y Cultura, Institución, Investigación y Sostenibilidad).
+- Cada ficha incluye resumen, fecha, autor, enlace original, etiquetas editoriales y temas para personalizar la lectura. La taxonomía suma Arte y cultura, Resiliencia urbana, Vida de campus, Respuesta a desastres, Deportes y Bienestar integral.
+- Las notas «Un campus vivo» y la galería BLUE FEST se muestran aparte en **50 años del Tec CEM** y no cuentan dentro de las ocho publicaciones regulares.
+- Los botones de lectura abren la nota original de CONECTA; la interfaz identifica el contenido como demo mixta en vez de presentar todos los datos como ficticios.
+- Fuente: [CONECTA · Estado de México](https://conecta.tec.mx/es/noticias/estado-de-mexico).
+
 ## 6 de octubre de 2026 — Revisión final confirmada; todas las fases revisadas y completadas
 
 - Revisión final de la entrega: 165 pruebas Node, 73 comprobaciones del recorrido integral F6 y 108 comprobaciones responsive aprobadas; auditoría de accesibilidad y marca en 44 estados de página sin hallazgos.

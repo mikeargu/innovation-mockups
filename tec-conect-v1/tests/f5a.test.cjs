@@ -21,14 +21,18 @@ test('preferences hold three independent groups; opportunities start explicitly 
   assert.deepEqual(state.pulsePreferences.sectionOrder, ['events', 'articles', 'opportunities', 'saved']);
 });
 
-test('Psicología is a selectable topic distinct from Salud, with a fictitious article and local full source', () => {
-  assert.ok(C.topicTaxonomy.some(topic => topic.id === psychology && topic.label === 'Psicología'));
-  assert.ok(C.topicTaxonomy.some(topic => topic.id === 'health' && topic.label === 'Salud'));
-  const articles = D.pulse.filter(item => item.kind === 'article' && item.topics.includes(psychology));
-  assert.ok(articles.length >= 1);
-  for (const article of articles) {
-    assert.equal(article.articleUrl, 'demo-source.html?type=article&id=' + article.id);
-    assert.ok(article.paragraphs.length >= 2); assert.ok(article.note.includes('ficticio'));
+test('editorial tags and new reading topics cover CONECTA articles and keep the anniversary special separate', () => {
+  for (const [id, label] of [['arts-culture', 'Arte y cultura'], ['urban-resilience', 'Resiliencia urbana'], ['campus-life', 'Vida de campus'], ['disaster-response', 'Respuesta a desastres'], ['sports', 'Deportes'], ['well-being', 'Bienestar integral']]) {
+    assert.ok(C.topicTaxonomy.some(topic => topic.id === id && topic.label === label));
+  }
+  const regular = D.pulse.filter(item => item.kind === 'article' && !item.special);
+  const special = D.pulse.filter(item => item.special);
+  assert.equal(regular.length, 8); assert.equal(special.length, 2);
+  assert.deepEqual(['Arte y Cultura', 'Institución', 'Investigación', 'Sostenibilidad'].map(category => regular.filter(item => item.editorialCategory === category).length), [2, 2, 2, 2]);
+  for (const article of [...regular, ...special]) {
+    assert.ok(article.editorialTags.length);
+    assert.ok(article.articleUrl.startsWith('https://conecta.tec.mx/'));
+    assert.ok(article.summary && article.topics.length);
   }
 });
 
@@ -44,11 +48,11 @@ test('internships carry professional areas for the role, independent of the comp
   assert.ok(crossSector, 'a finance role at a psychology-sector company illustrates area ≠ sector');
 });
 
-test('CP5A: reading Psicología prioritises the article without recommending a Psicología vacancy', () => {
-  const state = withGroups({ articles: [psychology], opportunities: [finance] });
+test('reading Resiliencia urbana prioritises matching articles without recommending an unrelated vacancy', () => {
+  const state = withGroups({ articles: ['urban-resilience'], opportunities: [finance] });
   const firstArticle = C.getPulseItems(state, D.pulse, 'news')[0];
-  assert.ok(firstArticle.topics.includes(psychology));
-  assert.deepEqual(C.pulseMatchTopics(state, firstArticle).map(topic => topic.label), ['Psicología']);
+  assert.ok(firstArticle.topics.includes('urban-resilience'));
+  assert.deepEqual(C.pulseMatchTopics(state, firstArticle).map(topic => topic.label), ['Resiliencia urbana']);
   const offers = widget(state, 'opportunities').items;
   assert.ok(offers.length >= 1);
   assert.ok(offers.every(job => job.professionalAreaIds.includes(finance)));
@@ -74,7 +78,7 @@ test('changing only Eventos changes its recommendations and keeps Artículos and
 
 test('an empty group shows general content for that group only, without reasons', () => {
   const state = withGroups({ articles: [] });
-  const news = D.pulse.filter(item => item.category === 'news');
+  const news = D.pulse.filter(item => item.category === 'news' && !item.special);
   assert.deepEqual(ids(C.getPulseItems(state, D.pulse, 'news')), ids(news));
   assert.ok(news.every(item => C.pulseMatchTopics(state, item).length === 0));
   assert.equal(widget(state, 'articles').generalContent, true);
