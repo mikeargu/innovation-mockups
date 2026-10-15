@@ -8,7 +8,7 @@ const P = require('../views/pulse.js');
 const find = id => D.pulse.find(item => item.id === id);
 const event = find('laboratorio-ideas');
 const workshop = find('prototipo');
-const article = find('huerto');
+const article = find('cem-obra-musical-fitu-2026');
 const localJob = find('practica-finanzas');
 const externalJob = find('practica-marketing');
 const context = (state, id, view) => ({ state, items: D.pulse, route: { section: 'pulse', view, id } });

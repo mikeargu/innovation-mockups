@@ -5,6 +5,14 @@
 **Directorio de trabajo:** `/Users/mike_argu/Documents/scuola/innovation/mockups/tec-conect-v1/`.
 **Objetivo:** integrar las aclaraciones del producto por partes, conservar el diseño aprobado y dejar un registro que permita continuar en otra sesión.
 
+## Actualización del contenido de Campus Pulse — 15 de octubre de 2026
+
+Esta actualización sustituye los siete artículos ficticios de la versión revisada el 6 de octubre. La app ahora conserva ocho artículos de CONECTA del Estado de México en el feed regular: dos por cada categoría editorial (Arte y Cultura, Institución, Investigación y Sostenibilidad). Cada ficha guarda el resumen, fecha, autor, URL original, etiquetas editoriales (`editorialTags`) y temas del mockup (`topics`). Los temas nuevos son Arte y cultura, Resiliencia urbana, Vida de campus, Respuesta a desastres, Deportes y Bienestar integral.
+
+«Un campus vivo: Tec Estado de México celebra 50 años de historia» y la galería BLUE FEST se presentan en una sección propia **50 años del Tec CEM**. Estas dos fichas especiales quedan fuera del conteo y filtro de los ocho artículos regulares; se pueden guardar como cualquier otra publicación. Los CTAs de lectura abren CONECTA en una pestaña nueva. El resto de eventos y oportunidades conserva sus datos de demo.
+
+Fuente consultada: [CONECTA · Estado de México](https://conecta.tec.mx/es/noticias/estado-de-mexico).
+
 ## 1. Punto de partida y dirección del producto
 
 La v1 ya tiene ocho vistas, navegación por hash, diseño mobile first con versión web, fuentes locales y acciones simuladas. La última verificación de esa versión registró 10 pruebas de estado, 107 comprobaciones de recorrido y 48 combinaciones de vista/tamaño. Estos números describen la **v1**; los resultados de la v2 completada están registrados en CP6 y en la revisión final.

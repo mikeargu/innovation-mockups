@@ -61,140 +61,6 @@
       "timezone": "America/Mexico_City"
     },
     {
-      "id": "huerto",
-      "category": "news",
-      "label": "Artículo",
-      "title": "Un proyecto que hace crecer comunidad",
-      "summary": "Un equipo combina diseño y datos para imaginar un huerto compartido. Conoce una historia ficticia de aprendizaje en comunidad.",
-      "date": "06 OCT",
-      "when": "Publicado el 6 de octubre de 2026",
-      "location": "Proyecto estudiantil · CEM",
-      "organizer": "Equipo Raíz",
-      "audience": "Comunidad del campus",
-      "art": "garden",
-      "detail": "Raíz es un proyecto ficticio que propone aprender sobre hábitos sostenibles a través de un huerto de colaboración. El equipo reúne estudiantes de diseño, ingeniería y comunicación.",
-      "bullets": [
-        "Diseño participativo con la comunidad.",
-        "Registro de crecimiento con datos sencillos.",
-        "Materiales para compartir lo aprendido."
-      ],
-      "note": "Historia conceptual. No representa un proyecto institucional activo.",
-      "source": "Nota de ejemplo · Equipo Raíz",
-      "kind": "article",
-      "topics": [
-        "water-sustainability",
-        "research",
-        "community"
-      ],
-      "paragraphs": [
-        "Raíz es un proyecto ficticio que propone aprender sobre hábitos sostenibles a través de un huerto de colaboración. El equipo reúne estudiantes de diseño, ingeniería y comunicación.",
-        "Diseño participativo con la comunidad. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Registro de crecimiento con datos sencillos. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Materiales para compartir lo aprendido. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende."
-      ],
-      "articleUrl": "demo-source.html?type=article&id=huerto"
-    },
-    {
-      "id": "bitacora",
-      "category": "news",
-      "label": "Artículo",
-      "title": "Lo que aprendimos al construir juntos",
-      "summary": "Tres equipos comparten su proceso y los cambios de sus proyectos. Descubre las preguntas que siguen abiertas en esta bitácora de ejemplo.",
-      "date": "05 OCT",
-      "when": "Publicado el 5 de octubre de 2026",
-      "location": "Bitácora de proyectos · CEM",
-      "organizer": "Comunidad Conecta",
-      "audience": "Comunidad del campus",
-      "art": "stories",
-      "detail": "Una bitácora es más útil cuando también muestra los intentos. Esta publicación de ejemplo reúne aprendizajes de colaboración: explicar el reto, acordar responsabilidades y pedir otra perspectiva a tiempo.",
-      "bullets": [
-        "Documentar decisiones ayuda a nuevos integrantes.",
-        "Un prototipo invita a conversar.",
-        "Compartir dudas también construye comunidad."
-      ],
-      "note": "Historia conceptual con equipos y aprendizajes ilustrativos.",
-      "source": "Nota de ejemplo · Comunidad Conecta",
-      "kind": "article",
-      "topics": [
-        "communication",
-        "community"
-      ],
-      "paragraphs": [
-        "Una bitácora es más útil cuando también muestra los intentos. Esta publicación de ejemplo reúne aprendizajes de colaboración: explicar el reto, acordar responsabilidades y pedir otra perspectiva a tiempo.",
-        "Documentar decisiones ayuda a nuevos integrantes. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Un prototipo invita a conversar. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Compartir dudas también construye comunidad. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende."
-      ],
-      "articleUrl": "demo-source.html?type=article&id=bitacora"
-    },
-    {
-      "id": "equipo-accesible",
-      "category": "news",
-      "label": "Artículo",
-      "title": "Una web más accesible necesita tu mirada",
-      "summary": "Un proyecto ficticio reúne miradas de UX, desarrollo web y comunicación. Descubre cómo explora una experiencia digital más accesible.",
-      "date": "20 OCT",
-      "when": "Convocatoria de ejemplo · hasta el 20 de octubre",
-      "location": "Colaboración híbrida · CEM",
-      "organizer": "Equipo Acceso",
-      "audience": "Interés en accesibilidad digital",
-      "art": "access",
-      "detail": "Acceso imagina una guía digital para que la información de un proyecto sea más fácil de encontrar y utilizar. Buscamos distintas perspectivas para revisar contenido, navegación e interfaces.",
-      "bullets": [
-        "UX/UI: explorar necesidades y recorridos.",
-        "Desarrollo web: construir un prototipo accesible.",
-        "Comunicación: escribir mensajes claros."
-      ],
-      "note": "Convocatoria ficticia; no recibe postulaciones reales.",
-      "source": "Publicación de ejemplo · Equipo Acceso",
-      "kind": "article",
-      "topics": [
-        "technology",
-        "communication"
-      ],
-      "paragraphs": [
-        "Acceso imagina una guía digital para que la información de un proyecto sea más fácil de encontrar y utilizar. Buscamos distintas perspectivas para revisar contenido, navegación e interfaces.",
-        "UX/UI: explorar necesidades y recorridos. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Desarrollo web: construir un prototipo accesible. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Comunicación: escribir mensajes claros. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende."
-      ],
-      "articleUrl": "demo-source.html?type=article&id=equipo-accesible"
-    },
-    {
-      "id": "reto-circular",
-      "category": "news",
-      "label": "Artículo",
-      "title": "Dale una segunda vida a una buena idea",
-      "summary": "Un equipo de distintas carreras explora un reto de economía circular. Conoce cómo da forma a una propuesta con recursos de ejemplo.",
-      "date": "23 OCT",
-      "when": "Convocatoria de ejemplo · hasta el 23 de octubre",
-      "location": "Proyecto colaborativo · CEM",
-      "organizer": "Laboratorio Circular",
-      "audience": "Estudiantes de todas las carreras",
-      "art": "circular",
-      "detail": "Un reto conceptual para pensar cómo reutilizar materiales y mejorar un proceso cotidiano. Puedes aportar análisis, diseño, finanzas o una pregunta distinta.",
-      "bullets": [
-        "Identifica un material o recurso subutilizado.",
-        "Contrasta una idea con posibles usuarios.",
-        "Diseña una propuesta viable en equipo."
-      ],
-      "note": "Convocatoria ficticia; no recibe postulaciones reales.",
-      "source": "Publicación de ejemplo · Laboratorio Circular",
-      "kind": "article",
-      "topics": [
-        "water-sustainability",
-        "entrepreneurship",
-        "finance"
-      ],
-      "paragraphs": [
-        "Un reto conceptual para pensar cómo reutilizar materiales y mejorar un proceso cotidiano. Puedes aportar análisis, diseño, finanzas o una pregunta distinta.",
-        "Identifica un material o recurso subutilizado. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Contrasta una idea con posibles usuarios. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende.",
-        "Diseña una propuesta viable en equipo. En esta historia de ejemplo, el equipo usa esa idea para conversar sobre su proceso y documentar lo que aprende."
-      ],
-      "articleUrl": "demo-source.html?type=article&id=reto-circular"
-    },
-    {
       "id": "primer-sueldo",
       "category": "events",
       "kind": "event",
@@ -403,84 +269,263 @@
       "source": "Canal CVDP · taller de ejemplo, sin registro institucional"
     },
     {
-      "id": "proyecto-experiencia",
+      "id": "cem-obra-musical-fitu-2026",
       "category": "news",
       "kind": "article",
-      "label": "Artículo",
-      "title": "Cómo convertir un proyecto de clase en experiencia profesional",
-      "summary": "Tu proyecto de clase puede ayudarte a explicar lo que sabes hacer. Identifica tu aporte, documenta decisiones y cuenta un aprendizaje concreto.",
-      "date": "06 OCT",
-      "when": "Publicado el 6 de octubre de 2026",
-      "location": "Historias de aprendizaje · CEM",
-      "organizer": "Redacción Conecta · ejemplo",
+      "label": "Arte y Cultura",
+      "title": "Estudiantes crean obra musical y logran pase a festival internacional",
+      "summary": "Más de 100 estudiantes participaron en A Cada Vida, Su Destino, un musical original que llegó a la final del Festival Internacional de Teatro Universitario (FITU). La obra recibió una mención por ensamble escénico.",
+      "date": "30 SEP",
+      "when": "Publicado el 30 de septiembre de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Redacción CONECTA",
       "audience": "Comunidad del campus",
-      "art": "access",
+      "art": "stories",
       "topics": [
-        "professional-development",
-        "communication",
-        "entrepreneurship"
+        "arts-culture",
+        "community"
       ],
-      "paragraphs": [
-        "Un proyecto de clase puede ser un punto de partida para conversar sobre experiencia. En este caso ficticio, una estudiante revisa un presupuesto elaborado en equipo y distingue las decisiones en las que participó.",
-        "El equipo reúne materiales del proceso: una primera pregunta, versiones de la propuesta y una reflexión sobre los cambios. La estudiante elige un ejemplo que le permite explicar su rol sin atribuirse el trabajo de otras personas.",
-        "Después escribe una descripción breve de la tarea, su aporte y lo aprendido. Los resultados de esta historia son ilustrativos; cada proyecto necesita una descripción fiel a la evidencia disponible."
+      "editorialCategory": "Arte y Cultura",
+      "editorialTags": [
+        "FITU",
+        "Arte y Cultura",
+        "Obra de Teatro",
+        "festival internacional de teatro universitario",
+        "UNAM",
+        "A Cada Vida Su Destino",
+        "compañías artísticas"
       ],
-      "articleUrl": "demo-source.html?type=article&id=proyecto-experiencia",
-      "note": "Artículo ficticio con ideas y experiencias ilustrativas.",
-      "source": "Fuente de ejemplo · Redacción Conecta"
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/arte-y-cultura/estudiantes-crean-obra-musical-y-logran-pase-festival",
+      "contentType": "article",
+      "readTimeMinutes": 4,
+      "publishedAt": "2026-09-30",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
     },
     {
-      "id": "agua-datos",
+      "id": "cem-lluvia-inundaciones-foro-2026",
       "category": "news",
       "kind": "article",
-      "label": "Artículo",
-      "title": "Del laboratorio al campus: aprender con agua y datos",
-      "summary": "Un caso ficticio conecta mediciones sencillas de agua con preguntas del campus. Descubre cómo un equipo organiza datos y comunica sus límites.",
-      "date": "06 OCT",
-      "when": "Publicado el 6 de octubre de 2026",
-      "location": "Historias de aprendizaje · CEM",
-      "organizer": "Redacción Conecta · ejemplo",
+      "label": "Sostenibilidad",
+      "title": "Lluvia e inundaciones: ¿qué hacer antes de que llegue al drenaje?",
+      "summary": "En el segundo Foro Nacional de Inundaciones y Resiliencia, especialistas propusieron captar y retener lluvia en espacios urbanos antes de que llegue al drenaje. También plantearon separar corrientes de agua y reutilizarlas según su calidad y destino.",
+      "date": "21 SEP",
+      "when": "Publicado el 21 de septiembre de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Sofía López del Aguila",
       "audience": "Comunidad del campus",
       "art": "garden",
       "topics": [
         "water-sustainability",
         "research",
-        "technology"
+        "urban-resilience"
       ],
-      "paragraphs": [
-        "En una práctica ficticia, un equipo imagina una pregunta sobre el uso del agua en el campus. Antes de medir, define qué podría observar y qué conclusiones quedarían fuera del alcance del ejercicio.",
-        "Los estudiantes crean un conjunto de datos sintéticos para practicar registro, limpieza y visualización. Comparan varias formas de explicar una tendencia y documentan las decisiones que podrían cambiar el resultado.",
-        "El equipo comparte una bitácora con sus preguntas abiertas. Este artículo describe un ejercicio conceptual y no presenta mediciones reales, evaluaciones de calidad del agua ni resultados institucionales."
+      "editorialCategory": "Sostenibilidad",
+      "editorialTags": [
+        "inundaciones",
+        "Resiliencia",
+        "Sostenibilidad",
+        "Foro"
       ],
-      "articleUrl": "demo-source.html?type=article&id=agua-datos",
-      "note": "Artículo ficticio con ideas y experiencias ilustrativas.",
-      "source": "Fuente de ejemplo · Redacción Conecta"
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/sostenibilidad/lluvia-e-inundaciones-que-hacer-antes-de-que-llegue-al",
+      "contentType": "article",
+      "readTimeMinutes": 4,
+      "publishedAt": "2026-09-21",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
     },
     {
-      "id": "mente-estudio",
+      "id": "cem-infrarisk-360-inundaciones-2026",
       "category": "news",
       "kind": "article",
-      "label": "Artículo",
-      "title": "Cómo aprende tu mente: atención, descanso y memoria",
-      "summary": "Un artículo ficticio explica qué dice la psicología sobre la atención y el descanso al estudiar. Descubre hábitos sencillos para probar durante una semana.",
-      "date": "07 OCT",
-      "when": "Publicado el 7 de octubre de 2026",
-      "location": "Historias de aprendizaje · CEM",
-      "organizer": "Redacción Conecta · ejemplo",
+      "label": "Investigación",
+      "title": "Inundaciones: desarrollan herramienta para identificar zonas de riesgo",
+      "summary": "Investigadores del Tec CEM desarrollan InfraRisk 360, una plataforma que combina datos reales, algoritmos y visualización 3D para agilizar mapas de riesgo. Busca ayudar a identificar cómo podrían afectar las lluvias a la infraestructura de distintas localidades.",
+      "date": "17 SEP",
+      "when": "Publicado el 17 de septiembre de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Sofía López del Aguila",
+      "audience": "Comunidad del campus",
+      "art": "access",
+      "topics": [
+        "technology",
+        "research",
+        "water-sustainability",
+        "urban-resilience"
+      ],
+      "editorialCategory": "Investigación",
+      "editorialTags": [
+        "InfraRisk 360",
+        "inundaciones",
+        "mapas de riesgo",
+        "Investigación",
+        "Doctorado en Ciencias de Ingeniería",
+        "foro nacional de inundaciones",
+        "water 360"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/investigacion/inundaciones-desarrollan-herramienta-para-identificar-zonas",
+      "contentType": "article",
+      "readTimeMinutes": 3,
+      "publishedAt": "2026-09-17",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
+    },
+    {
+      "id": "cem-albergues-sismos-ifors-2026",
+      "category": "news",
+      "kind": "article",
+      "label": "Investigación",
+      "title": "EXATEC presenta modelo de albergues ante sismos en foro internacional",
+      "summary": "Un doctorando del Tec CEM presentó en IFORS 2026 un modelo para decidir dónde habilitar albergues después de un sismo. El análisis combina población, riesgo, distancias y costos, con datos reales y simulados del Valle de México.",
+      "date": "31 AGO",
+      "when": "Publicado el 31 de agosto de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Sofía López del Aguila",
+      "audience": "Comunidad del campus",
+      "art": "access",
+      "topics": [
+        "research",
+        "community",
+        "disaster-response"
+      ],
+      "editorialCategory": "Investigación",
+      "editorialTags": [
+        "IFORS",
+        "Logística humanitaria",
+        "operations research",
+        "Investigación",
+        "Doctorado en Ciencias de Ingeniería"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/investigacion/exatec-presenta-modelo-de-albergues-ante-sismos-en-foro",
+      "contentType": "article",
+      "readTimeMinutes": 3,
+      "publishedAt": "2026-08-31",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
+    },
+    {
+      "id": "cem-porra-borregos-identidad-2026",
+      "category": "news",
+      "kind": "article",
+      "label": "Institución",
+      "title": "El origen de un legado: la historia detrás de la porra de Borregos CEM",
+      "summary": "Una porra que un estudiante empezó a escribir en los años noventa se convirtió en un símbolo compartido por Borregos CEM y la comunidad del campus. La historia recorre cómo las gradas, el futbol americano y el apoyo estudiantil ayudaron a crear esa tradición.",
+      "date": "27 MAY",
+      "when": "Publicado el 27 de mayo de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Mauricio Ramírez",
+      "audience": "Comunidad del campus",
+      "art": "circular",
+      "topics": [
+        "community",
+        "campus-life",
+        "sports"
+      ],
+      "editorialCategory": "Institución",
+      "editorialTags": [
+        "Borregos CEM",
+        "Porra",
+        "borregos"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/institucion/el-origen-de-un-legado-la-historia-detras-de-la-porra-de-borregos-cem",
+      "contentType": "article",
+      "readTimeMinutes": 4,
+      "publishedAt": "2026-05-27",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
+    },
+    {
+      "id": "cem-primer-foro-inundaciones-2025",
+      "category": "news",
+      "kind": "article",
+      "label": "Sostenibilidad",
+      "title": "¿Por qué hay inundaciones? Revisan en foro del Tec posibles soluciones",
+      "summary": "En el primer Foro Nacional de Inundaciones y Resiliencia, especialistas identificaron causas como los cambios en los patrones de lluvia, el uso de suelo y la basura en el drenaje. Academia, gobierno, industria y ciudadanía compartieron propuestas para reducir riesgos y fortalecer la resiliencia.",
+      "date": "08 SEP",
+      "when": "Publicado el 8 de septiembre de 2025",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Guillermo Solorio",
+      "audience": "Comunidad del campus",
+      "art": "garden",
+      "topics": [
+        "water-sustainability",
+        "research",
+        "urban-resilience"
+      ],
+      "editorialCategory": "Sostenibilidad",
+      "editorialTags": [
+        "inundaciones",
+        "Resiliencia",
+        "Sostenibilidad",
+        "Foro"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/sostenibilidad/tec-cem-impulsa-resiliencia-ante-inundaciones-con-foro-nacional",
+      "contentType": "article",
+      "readTimeMinutes": 6,
+      "publishedAt": "2025-09-08",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
+    },
+    {
+      "id": "cem-talento-artistico-vibrart-2025",
+      "category": "news",
+      "kind": "article",
+      "label": "Arte y Cultura",
+      "title": "¡Talento artístico! Estudiantes de Tec CEM triunfan en VIBRART 2025",
+      "summary": "Estudiantes de Tec CEM cerraron VIBRART 2025 con tres primeros lugares, tres segundos lugares y un premio Talento que Inspira. La nota reúne logros en canción, artes visuales, danza, literatura y monólogos.",
+      "date": "19 JUN",
+      "when": "Publicado el 19 de junio de 2025",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Guillermo Solorio",
       "audience": "Comunidad del campus",
       "art": "stories",
       "topics": [
-        "psychology",
-        "research"
+        "arts-culture",
+        "community"
       ],
-      "paragraphs": [
-        "En este texto ficticio, una estudiante de Finanzas lleva un registro de cuándo logra concentrarse y cuándo se distrae. Antes de cambiar su rutina, anota qué preguntas le interesan responder.",
-        "El artículo resume ideas generales de la psicología del aprendizaje: la atención se cansa, el descanso ayuda a consolidar lo estudiado y repasar en días distintos suele funcionar mejor que estudiar todo de una vez.",
-        "La propuesta es probar un hábito durante una semana y observar el resultado. Este artículo es un ejemplo conceptual y no sustituye orientación psicológica profesional ni presenta resultados de investigación reales."
+      "editorialCategory": "Arte y Cultura",
+      "editorialTags": [
+        "VibrArt",
+        "VibrArt 2025",
+        "arte y cultura"
       ],
-      "articleUrl": "demo-source.html?type=article&id=mente-estudio",
-      "note": "Artículo ficticio con ideas generales e ilustrativas.",
-      "source": "Fuente de ejemplo · Redacción Conecta"
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/arte-y-cultura/talento-artistico-estudiantes-de-tec-cem-triunfan-en-vibrart",
+      "contentType": "article",
+      "readTimeMinutes": 4,
+      "publishedAt": "2025-06-19",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
+    },
+    {
+      "id": "cem-wellbeing-gym-2024",
+      "category": "news",
+      "kind": "article",
+      "label": "Institución",
+      "title": "Bienestar multidimensional: Tec CEM inaugura nuevo Wellbeing Gym",
+      "summary": "Tec CEM abrió el primer Wellbeing Gym del Tec, con cinco estaciones para trabajar siete dimensiones del bienestar. El espacio ofrece actividades breves con acompañamiento de especialistas en bienestar estudiantil.",
+      "date": "18 ABR",
+      "when": "Publicado el 18 de abril de 2024",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Daniella Carmona",
+      "audience": "Comunidad del campus",
+      "art": "circular",
+      "topics": [
+        "health",
+        "community",
+        "well-being"
+      ],
+      "editorialCategory": "Institución",
+      "editorialTags": [
+        "Wellbeing Gym",
+        "Bienestar Integral",
+        "LIFE"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/institucion/bienestar-multidimensional-tec-cem-inaugura-nuevo-wellbeing",
+      "contentType": "article",
+      "readTimeMinutes": 3,
+      "publishedAt": "2024-04-18",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo."
     },
     {
       "id": "practica-finanzas",
@@ -507,7 +552,9 @@
       "ctaLabel": "Saber más",
       "ctaUrl": "demo-source.html?type=job&id=practica-finanzas",
       "applyMode": "local",
-      "professionalAreaIds": ["finance"],
+      "professionalAreaIds": [
+        "finance"
+      ],
       "responsibilities": [
         "Organizar una base de gastos ficticios para análisis.",
         "Comparar escenarios de presupuesto con acompañamiento.",
@@ -549,7 +596,9 @@
       ],
       "ctaLabel": "Saber más",
       "ctaUrl": "demo-source.html?type=job&id=practica-marketing",
-      "professionalAreaIds": ["marketing"],
+      "professionalAreaIds": [
+        "marketing"
+      ],
       "responsibilities": [
         "Explorar una audiencia con información sintética.",
         "Redactar propuestas de mensajes para una campaña conceptual.",
@@ -589,7 +638,9 @@
       ],
       "ctaLabel": "Saber más",
       "ctaUrl": "demo-source.html?type=job&id=practica-web",
-      "professionalAreaIds": ["technology"],
+      "professionalAreaIds": [
+        "technology"
+      ],
       "responsibilities": [
         "Construir una interfaz pequeña con HTML, CSS y JavaScript.",
         "Revisar navegación por teclado con el equipo.",
@@ -629,7 +680,9 @@
       ],
       "ctaLabel": "Saber más",
       "ctaUrl": "demo-source.html?type=job&id=practica-finanzas-bienestar",
-      "professionalAreaIds": ["finance"],
+      "professionalAreaIds": [
+        "finance"
+      ],
       "responsibilities": [
         "Registrar gastos ficticios de programas de bienestar.",
         "Comparar el presupuesto planeado con el ejercido.",
@@ -644,6 +697,76 @@
       "process": "Esta página muestra una oportunidad ficticia para explorar la navegación. No recibe postulaciones ni representa una vacante activa.",
       "note": "Empresa, vacante y fecha ficticias; no recibe postulaciones reales.",
       "source": "Canal CVDP · oportunidad de ejemplo"
+    },
+    {
+      "id": "cem-50-aniversario-campus-vivo-2026",
+      "category": "news",
+      "kind": "article",
+      "label": "Institución",
+      "title": "Un campus vivo: Tec Estado de México celebra 50 años de historia",
+      "summary": "La comunidad celebró los 50 años del campus con actividades culturales, deportivas y una cápsula del tiempo. Como parte del aniversario, 22 estudiantes crearon un mural sobre la historia e identidad del CEM.",
+      "date": "22 SEP",
+      "when": "Publicado el 22 de septiembre de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Sofía López del Aguila",
+      "audience": "Comunidad del campus",
+      "art": "circular",
+      "topics": [
+        "community",
+        "campus-life",
+        "arts-culture"
+      ],
+      "editorialCategory": "Institución",
+      "editorialTags": [
+        "Campus Estado de México",
+        "Aniversario Tec",
+        "50 años"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/institucion/un-campus-vivo-tec-estado-de-mexico-celebra-50-anos-de",
+      "contentType": "article",
+      "readTimeMinutes": 6,
+      "publishedAt": "2026-09-22",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo.",
+      "special": true,
+      "specialLabel": "Especial · 50 años del Tec CEM"
+    },
+    {
+      "id": "cem-blue-fest-50-aniversario-2026",
+      "category": "news",
+      "kind": "article",
+      "label": "Institución",
+      "title": "BLUE FEST reúne a la comunidad del Tec CEM por sus 50 años (fotos)",
+      "summary": "Estudiantes, EXATEC y colaboradores se reunieron en el Estadio Borregos para celebrar el 50 aniversario del campus con música, juegos y convivencia. La nota es una galería fotográfica del BLUE FEST.",
+      "date": "14 SEP",
+      "when": "Publicado el 14 de septiembre de 2026",
+      "location": "Campus Estado de México · Tec CEM",
+      "organizer": "Sofía López del Aguila",
+      "audience": "Comunidad del campus",
+      "art": "circular",
+      "topics": [
+        "community",
+        "arts-culture",
+        "campus-life"
+      ],
+      "editorialCategory": "Institución",
+      "editorialTags": [
+        "Blue Fest",
+        "Tec campus Estado de México",
+        "50 aniversario",
+        "Aniversario Tec",
+        "EXATEC",
+        "Concierto",
+        "Música"
+      ],
+      "articleUrl": "https://conecta.tec.mx/es/noticias/estado-de-mexico/institucion/blue-fest-reune-la-comunidad-del-tec-cem-por-sus-50-anos",
+      "contentType": "photo-gallery",
+      "readTimeMinutes": 1,
+      "publishedAt": "2026-09-14",
+      "source": "CONECTA · Tec de Monterrey",
+      "note": "Resumen editorial para el mockup. Consulta la publicación original de CONECTA para leer el contenido completo.",
+      "special": true,
+      "specialLabel": "Especial · 50 años del Tec CEM"
     }
   ],
   "people": [

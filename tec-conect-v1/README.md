@@ -1,6 +1,6 @@
 # Tec Conect by CEM · prototipo conceptual
 
-Demo responsive en español de **Campus Pulse**, **Talent Network**, **Mentor Match** y **Mi perfil**. Es un concepto: nombres, perfiles, publicaciones, empresas, materias, profesores, disponibilidad y solicitudes son ficticios. «Tec Conect by CEM» es un nombre de trabajo de una propuesta estudiantil, sujeto a revisión institucional; no representa un producto, logotipo ni aval oficial del Tecnológico de Monterrey.
+Demo responsive en español de **Campus Pulse**, **Talent Network**, **Mentor Match** y **Mi perfil**. Es un concepto: perfiles, eventos, oportunidades, empresas, materias, profesores, disponibilidad y solicitudes son ficticios. Campus Pulse incorpora ocho artículos de CONECTA con resúmenes editoriales y enlaces a las publicaciones originales; dos notas del 50 aniversario aparecen en una edición especial. «Tec Conect by CEM» es un nombre de trabajo de una propuesta estudiantil, sujeto a revisión institucional; no representa un producto, logotipo ni aval oficial del Tecnológico de Monterrey.
 
 ## Estado de la entrega
 
@@ -29,8 +29,8 @@ La guía común está en [`../README.md`](../README.md). Este README detalla los
 
 ## Recorridos de demo
 
-1. **Campus Pulse:** cambia entre **Para ti** y **Todo el campus**. El dashboard tiene Eventos y talleres, Artículos, Oportunidades CVDP y Mis guardados, con orden y visibilidad configurables. Hay 20 publicaciones de ejemplo (9 eventos/talleres, 7 artículos y 4 prácticas). En un evento: **Registrarme** → revisar perfil → **Confirmar registro**, y **Agregar a mi calendario** descarga un `.ics` de ejemplo sin registrarte. En la práctica de análisis financiero: **Postúlate** → escribir interés → confirmar. Los artículos y prácticas muestran resumen y enlazan a una fuente local completa.
-2. **Preferencias (F5A):** en Mi perfil → Preferencias elige por separado **Eventos y talleres que me interesan**, **Temas que me gusta leer** y **Áreas donde busco oportunidades**. Caso de revisión: IA en Eventos, Psicología en Lecturas y Finanzas en Oportunidades → **Guardar preferencias** → Campus Pulse prioriza el artículo de Psicología y recomienda solo prácticas de Finanzas (incluida una de Finanzas en un centro de bienestar: cuenta el área del puesto, no el sector). Cada recomendación indica su grupo.
+1. **Campus Pulse:** cambia entre **Para ti** y **Todo el campus**. El dashboard tiene Eventos y talleres, Artículos, Oportunidades CVDP y Mis guardados, con orden y visibilidad configurables. Hay 21 publicaciones regulares (9 eventos/talleres, 8 artículos de CONECTA y 4 prácticas), además de 2 artículos en la edición especial **50 años del Tec CEM**. En un evento: **Registrarme** → revisar perfil → **Confirmar registro**, y **Agregar a mi calendario** descarga un `.ics` de ejemplo sin registrarte. En la práctica de análisis financiero: **Postúlate** → escribir interés → confirmar. Los artículos muestran resumen y etiquetas temáticas con enlaces externos a CONECTA; las prácticas enlazan a sus fichas locales de ejemplo. La edición especial se mantiene fuera del conteo y del filtro de los ocho artículos regulares.
+2. **Preferencias (F5A):** en Mi perfil → Preferencias elige por separado **Eventos y talleres que me interesan**, **Temas que me gusta leer** y **Áreas donde busco oportunidades**. Caso de revisión: IA en Eventos, Resiliencia urbana en Lecturas y Finanzas en Oportunidades → **Guardar preferencias** → Campus Pulse prioriza artículos sobre inundaciones y recomienda solo prácticas de Finanzas (incluida una de Finanzas en un centro de bienestar: cuenta el área del puesto, no el sector). Cada recomendación indica su grupo.
 3. **Talent Network:** el asistente está arriba. Toca el chip «Startup de geles para correr» y **Encontrar mi equipo**: verás personas por rol (Marketing, Finanzas, Diseño / desarrollo web) con habilidades, evidencia, razón y disponibilidad declarada, sin rankings. También hay ejemplos de hackathon y de app para el campus. Debajo, el directorio «Personas para descubrir» con búsqueda y filtro; **Ver perfil** y **Enviar solicitud de contacto** simulan una solicitud pendiente.
 4. **Mentor Match:** el asistente usa carrera y semestre del perfil. Toca «Finanzas → mercado bursátil mexicano» y **Explorar mi ruta** para ver una ruta de ejemplo en seis secciones (meta, etapas, materias, profesores, intercambio o concentración y siguiente conversación). Debajo está la red de apoyo: mentoría institucional asignada y director de Finanzas siempre visibles, profesores que puedes fijar o quitar, y un explorador de profesores. **Solicitar orientación** simula una solicitud pendiente.
 5. **Mi perfil:** abre el avatar, edita descripción, proyectos, habilidades, contacto y visibilidad. El contacto es privado por defecto y nunca aparece en tarjetas públicas; con colaboración y descubrimiento activos, tu perfil aparece en Talent como «Tu perfil».
@@ -44,7 +44,7 @@ Rutas hash: `#/pulse`, `#/pulse/:id`, `#/pulse/:id/register`, `#/pulse/:id/apply
 ## Accesibilidad y marca
 
 - Contraste AA en texto y placeholders, objetivos táctiles de 44 px, foco visible, texto de 12 px o más, estados con icono y texto, anuncios para lectores de pantalla (`#live`) y foco gestionado tras cada acción. En teléfonos los campos usan 16 px para evitar el zoom de iOS.
-- Poppins, Azul TEC `#0039A6` como ancla (morado en Talent y naranja en Mentor como acentos), Material Symbols Rounded, radios 4/8/12/24 px y marcador «Concepto · datos ficticios» en todas las vistas.
+- Poppins, Azul TEC `#0039A6` como ancla (morado en Talent y naranja en Mentor como acentos), Material Symbols Rounded, radios 4/8/12/24 px y marcador «Concepto · contenido demo» en todas las vistas.
 
 ## Validación local
 
@@ -78,9 +78,9 @@ node tests/a11y.audit.test.cjs
 
 ## Archivos
 
-- `data.js`: contenido de ejemplo. `state.js`: estado y lógica, exportable a Node. `demo-ai.js`: respuestas deterministas de los asistentes. `calendar.js`: exportación `.ics`. `ui.js`: escape, iconos y enlaces seguros.
+- `data.js`: contenido de ejemplo y artículos de CONECTA. Las etiquetas temáticas combinan la taxonomía editorial con temas del mockup; `editorialTags` conserva las etiquetas de origen. La lista consultada es [CONECTA · Estado de México](https://conecta.tec.mx/es/noticias/estado-de-mexico). `state.js`: estado y lógica, exportable a Node. `demo-ai.js`: respuestas deterministas de los asistentes. `calendar.js`: exportación `.ics`. `ui.js`: escape, iconos y enlaces seguros.
 - `views/profile.js`, `views/pulse.js`, `views/pulse-actions.js`, `views/talent.js`, `views/mentor.js`: renderizadores por área. `app.js`: rutas, eventos delegados, foco y scroll.
-- `styles.css` (base) y `profile.css`, `pulse.css`, `talent.css`, `mentor.css` (componentes por área). `demo-source.html`/`demo-source.js`: fuentes locales de artículos y prácticas.
+- `styles.css` (base) y `profile.css`, `pulse.css`, `talent.css`, `mentor.css` (componentes por área). `demo-source.html`/`demo-source.js`: ficha local de oportunidades de ejemplo; los artículos de CONECTA abren su publicación original.
 
 ## Limitaciones conocidas
 

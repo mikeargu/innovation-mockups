@@ -8,7 +8,10 @@
     { id: 'research', label: 'Investigación' }, { id: 'communication', label: 'Comunicación / Storytelling' },
     { id: 'community', label: 'Comunidad' }, { id: 'professional-development', label: 'Desarrollo profesional / CV' },
     { id: 'health', label: 'Salud' }, { id: 'government', label: 'Gobierno' },
-    { id: 'psychology', label: 'Psicología' }
+    { id: 'psychology', label: 'Psicología' }, { id: 'arts-culture', label: 'Arte y cultura' },
+    { id: 'urban-resilience', label: 'Resiliencia urbana' }, { id: 'campus-life', label: 'Vida de campus' },
+    { id: 'disaster-response', label: 'Respuesta a desastres' }, { id: 'sports', label: 'Deportes' },
+    { id: 'well-being', label: 'Bienestar integral' }
   ];
   // Each Pulse category is personalised by its own group of topics (F5A).
   const PULSE_GROUPS = ['events', 'articles', 'opportunities'];
@@ -164,7 +167,8 @@
   function getPulseItems(state, items, category = state.filters.pulse) {
     const ranked = effectivePulseMode(state) === 'forYou' ? items.map((item, index) => ({ item, index, score: pulseMatchTopics(state, item).length }))
       .sort((a, b) => b.score - a.score || a.index - b.index).map(entry => entry.item) : items.slice();
-    return ranked.filter(item => category === 'all' || (category === 'saved' ? state.saved.includes(item.id) : item.category === category));
+    // Anniversary stories live in their own section; regular category counts exclude them.
+    return ranked.filter(item => category === 'saved' ? state.saved.includes(item.id) : !item.special && (category === 'all' || item.category === category));
   }
   function getPulseWidgets(state, items) {
     const layout = normalizePulseLayout(state.pulsePreferences);
@@ -344,7 +348,7 @@
     return String(value == null ? '' : value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   }
   const api = { createState, clone, topicTaxonomy, pulseSections, PULSE_GROUPS, migratePulsePreferences, hasPulseTopics, normalizePulseLayout, effectivePulseMode, pulseMatchTopics, getPulseItems, getPulseWidgets, movePreferencesSection, restorePulseSections, initials, isSafeURL, commaValues, beginProfileDraft, cancelProfileDraft, addProfileRow, removeProfileRow, validateProfile, saveProfile, beginPreferencesDraft, cancelPreferencesDraft, savePreferences, getPeople, submitContact, submitMentor, DEMO_DATE, INTEREST_MAX_LENGTH, TALENT_QUERY_MAX_LENGTH, CAREER_GOAL_MAX_LENGTH, setCareerGoal, submitCareerAssistant, selectCareerAlternative, pinSupport, unpinSupport, supportNetwork, setTalentAssistantQuery, submitTalentAssistant, exploreTalentSkill, pulseActions, actionProfileSummary, registerForEvent, applyToInternship, toggleSaved, reconcileTalentSkillFilter, filterPeople, resolveRoute, escapeHTML,
-    filterPulse: (items, category) => items.filter(item => category === 'all' || item.category === category),
+    filterPulse: (items, category) => items.filter(item => !item.special && (category === 'all' || item.category === category)),
     filterMentors: (items, topic) => items.filter(item => topic === 'all' || item.topics.includes(topic)),
     resetState: state => { Object.keys(state).forEach(key => delete state[key]); return Object.assign(state, createState()); }
   };

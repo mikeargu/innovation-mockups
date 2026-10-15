@@ -22,7 +22,7 @@ test('general content is effective for disabled personalization and no selected 
   for (const customize of [s => { s.pulsePreferences.enabled = false; }, s => { s.pulsePreferences.topicsByCategory = { events: [], articles: [], opportunities: [] }; }, s => { s.pulseMode = 'all'; }]) {
     const state = C.createState(); customize(state);
     assert.equal(C.effectivePulseMode(state), 'all');
-    assert.deepEqual(ids(C.getPulseItems(state, D.pulse)), ids(D.pulse));
+    assert.deepEqual(ids(C.getPulseItems(state, D.pulse)), ids(D.pulse.filter(item => !item.special)));
   }
 });
 
@@ -56,14 +56,14 @@ test('preferences atomically save normalized layout and topics, cancel preserves
 
 test('restore sections reconciles a pending draft layout without losing staged topics or enabled', () => {
   assert.equal(typeof C.restorePulseSections, 'function');
-  const state = C.createState(); state.saved = ['huerto']; state.filters.pulse = 'news';
+  const state = C.createState(); state.saved = ['cem-obra-musical-fitu-2026']; state.filters.pulse = 'news';
   state.pulsePreferences.sectionOrder.reverse(); state.pulsePreferences.sectionVisibility.events = false;
   const draft = C.beginPreferencesDraft(state); draft.topicsByCategory.articles = ['water-sustainability']; draft.enabled = false;
   C.restorePulseSections(state);
   assert.deepEqual(state.pulsePreferences.sectionOrder, C.createState().pulsePreferences.sectionOrder);
   assert.deepEqual(draft.sectionOrder, C.createState().pulsePreferences.sectionOrder);
   assert.deepEqual(draft.topicsByCategory.articles, ['water-sustainability']); assert.equal(draft.enabled, false);
-  assert.deepEqual(state.saved, ['huerto']); assert.equal(state.filters.pulse, 'news');
+  assert.deepEqual(state.saved, ['cem-obra-musical-fitu-2026']); assert.equal(state.filters.pulse, 'news');
   C.savePreferences(state); assert.deepEqual(state.pulsePreferences.topicsByCategory.articles, ['water-sustainability']);
 });
 

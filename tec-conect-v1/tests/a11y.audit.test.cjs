@@ -8,7 +8,7 @@ const base=process.env.TEC_URL||'http://127.0.0.1:8765/';
 const MIN_TARGET=44, MIN_TEXT=12, MAX_TAB_STEPS=220;
 const settle=page=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
 async function nav(page,hash){await page.evaluate(value=>{location.hash=value;},hash);await settle(page);}
-const routes=['#/pulse','#/pulse/laboratorio-ideas','#/pulse/laboratorio-ideas/register','#/pulse/huerto','#/pulse/practica-finanzas','#/pulse/practica-finanzas/apply',
+const routes=['#/pulse','#/pulse/laboratorio-ideas','#/pulse/laboratorio-ideas/register','#/pulse/cem-obra-musical-fitu-2026','#/pulse/practica-finanzas','#/pulse/practica-finanzas/apply',
  '#/talent','#/talent/lucia-torres','#/talent/lucia-torres/contact','#/mentor','#/mentor/plan','#/mentor/elena-cruz','#/mentor/paula-ortiz/request',
  '#/profile','#/profile/edit','#/profile/preferences'];
 const states=[
@@ -16,7 +16,6 @@ const states=[
  {name:'mentor-plan',run:async page=>{await nav(page,'#/mentor');await page.locator('#career-chip-stock-market').click();await settle(page);await page.getByRole('button',{name:'Explorar mi ruta',exact:true}).click();await settle(page);await settle(page);await page.locator('#alt-button-exchange').click();await settle(page);}},
  {name:'register-confirmed',run:async page=>{await nav(page,'#/pulse/prototipo/register');await page.getByRole('button',{name:'Confirmar registro'}).click();await settle(page);}},
  {name:'apply-error',run:async page=>{await nav(page,'#/pulse/practica-finanzas/apply');await page.getByRole('button',{name:'Confirmar postulación'}).click();await settle(page);}},
- {name:'source-article',url:'demo-source.html?type=article&id=huerto'},
  {name:'source-job',url:'demo-source.html?type=job&id=practica-finanzas'}
 ];
 
